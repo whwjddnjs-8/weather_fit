@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import styles from "./Home.module.css"
+import styles from "./Home.module.scss"
 import loadingImg from "../images/cloud.png"
 import logoImg from "../images/logo3.png"
 import cloud2 from "../images/cloud2.png"
