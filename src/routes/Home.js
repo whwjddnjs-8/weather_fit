@@ -70,11 +70,13 @@ function Home() {
                   <i className={`wi wi-day-${icon}`}></i>
                 </div>
                 <div className={styles.weather_desc}>
-                  <h2 className={styles.today}>{today}</h2>
-                  <h1>{weather.main.temp} °C / {weather.main.humidity} %</h1>
-                    <p className={styles.weather_loc}>({weather.name} / {weather.sys.country})</p>
+                  <h2 className={styles.today}>
+                    {today}
+                    <span>{weather.main.temp} °C / {weather.main.humidity} %</span>
+                  </h2>
+                  {/* <p className={styles.weather_loc}>({weather.name} / {weather.sys.country})</p> */}
+                  <p className={styles.weather_loc}>{weather.weather[0].description}</p>
                 </div>
-                {/* <button>Show Weather Fit</button> */}
                 <div className={styles.btn_area}>
                   <p>Show Weather Fit</p>
                   <i className='xi-angle-down-thin'></i>

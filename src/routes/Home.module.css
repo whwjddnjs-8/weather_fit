@@ -133,9 +133,9 @@
     font-size: 3em;
 }
 
-.weather_desc h1 {
-    font-size: 5em;
-    margin: 0;
+.weather_desc .today span {
+    display: block;
+    font-size: 1.6em;
 }
 
 .weather_loc {
@@ -143,7 +143,7 @@
     padding-left: 8px;
     font-weight: 500;
     margin: 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .weather .btn_area {
