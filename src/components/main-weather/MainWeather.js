@@ -1,7 +1,5 @@
 import styles from "./MainWeather.module.scss";
-import logoImg from "../../images/logo3.png";
 import cloud2 from "../../images/cloud2.png";
-import cloud3 from "../../images/cloud3.png";
 import Header from '../../components/header/Header';
 
 function MainWeather({icon, today, weather}) {
@@ -9,9 +7,7 @@ function MainWeather({icon, today, weather}) {
         <div className={styles.main_weather}>
               <Header />
               <div className={styles.logo_area}>
-                {/* <img src={logoImg} className={styles.logoImg}/> */}
-                <img src={cloud2} className={styles.cloud1} />
-                <img src={cloud3} className={styles.cloud2} />
+                <img src={cloud2} className={styles.cloud} />
               </div>
              
             <div className={styles.weather_area}>

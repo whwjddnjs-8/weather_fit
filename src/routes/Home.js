@@ -3,6 +3,11 @@ import styles from "./Home.module.scss"
 import loadingImg from "../images/cloud.png"
 import MainWeather from '../components/main-weather/MainWeather';
 import MainWeatherCmmty from '../components/main-weather-cmnty/MainWeatherCmnty';
+import Slider from "react-slick";
+import cloth from "../images/neat.png"
+import cloth2 from "../images/trench.jpg"
+import cloth3 from "../images/rider.png"
+import Footer from '../components/footer/Footer';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -11,6 +16,14 @@ function Home() {
   const [icon, setIcon] = useState('wi-day-sunny');
   const [today, setToday] = useState('');
   
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
+
   const success = async (e) => {
     if (e.coords.latitude && e.coords.longitude) {
       let  json = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${e.coords.latitude}&lon=${e.coords.longitude}&appid=${api}&units=metric`)).json();
@@ -53,8 +66,34 @@ function Home() {
                   <img src={loadingImg} />
           </div> :
           <div>
-            <MainWeather icon={icon} today={today} weather={weather} />
+            <MainWeather  er icon={icon} today={today} weather={weather} />
+            <div className={styles.recommend_style}>
+              <h1>오늘 뭐입지?
+                <span>자세히 보기 &gt;</span> 
+              </h1>
+               <Slider {...settings}>
+                <div>
+                  <img src={cloth} />
+                </div>
+                <div>
+                  <img src={cloth2} />
+                </div>
+                <div>
+                  <img src={cloth3} />
+                </div>
+                <div>
+                   <img src={cloth} />
+                </div>
+                <div>
+                   <img src={cloth} />
+                </div>
+                <div>
+                   <img src={cloth} />
+                </div>
+              </Slider>
+            </div>
             <MainWeatherCmmty />
+            <Footer />
           </div>
             }
         </div>  

@@ -1,9 +1,9 @@
 .main_weather {
     font-family: 'EB Garamond', serif;
     margin-top: 60px;
-    background: url(../../images/background.png) no-repeat center center;
+    background: url(../../images/yard1.png) no-repeat center center;
     background-size: cover;
-    background-position: 0 50px;
+    background-position: 0 200px ;
     height: 96vh;
     position: relative;
 
@@ -15,24 +15,23 @@
         place-content: center;
         position: relative;
 
-        .logoImg {
-            width: 450px;
-        }
 
-        .cloud1 {
+        .cloud {
             position: absolute;
+            width: 700px;
             left: -100px;
             bottom: -40px;
             animation: cloudLoading 5s linear infinite;
         }
 
-        .cloud2 {
+        /* .cloud2 {
             position: absolute;
+            width: 600px;
             right: -100px;
-            bottom: -100px;
+            top: 290px;
             animation: cloudLoading 5s linear infinite;
             animation-delay: 0.3s;
-        }
+        } */
     }
 
     .weather_area {
