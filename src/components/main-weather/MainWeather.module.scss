@@ -1,11 +1,26 @@
 .main_weather {
     font-family: 'EB Garamond', serif;
     margin-top: 60px;
-    background: url(../../images/yard1.png) no-repeat center center;
+    background: url(../../images/yard5.png);
+    background-repeat: repeat-x;
+    background-position: cover;
     background-size: cover;
-    background-position: 0 200px ;
+    animation: gradient 150s ease infinite;
     height: 96vh;
-    position: relative;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
     .logo_area {
         background-color: #e5f6fc;
@@ -15,14 +30,13 @@
         place-content: center;
         position: relative;
 
-
-        .cloud {
+        /* .cloud {
             position: absolute;
             width: 700px;
             left: -100px;
             bottom: -40px;
             animation: cloudLoading 5s linear infinite;
-        }
+        } */
 
         /* .cloud2 {
             position: absolute;
@@ -37,7 +51,7 @@
     .weather_area {
         height: 250px;
         position: absolute;
-        top: 33%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;

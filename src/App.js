@@ -1,5 +1,4 @@
 import './App.scss';
-import { useState, useEffect } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -7,21 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./routes/Home";
-function App() {
-  /* const [today, setToday] = useState('');
-  
-  function componentDidMount() {
-    fetch('http://localhost:3001/api')
-      .then(res => res.json())
-      .then(data => {
-        setToday(data.title);
-        console.log(data.title);
-      } );
-  }
 
-   useEffect(() => {
-     componentDidMount();
-  }, []); */
+function App() {
   
   return (
     <BrowserRouter>

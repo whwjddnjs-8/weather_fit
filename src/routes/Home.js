@@ -8,6 +8,7 @@ import cloth from "../images/neat.png"
 import cloth2 from "../images/trench.jpg"
 import cloth3 from "../images/rider.png"
 import Footer from '../components/footer/Footer';
+import axios from 'axios';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ function Home() {
   const [weather, setWeather] = useState([]);
   const [icon, setIcon] = useState('wi-day-sunny');
   const [today, setToday] = useState('');
-  
+  const [board, setBoard] = useState('');
   var settings = {
     dots: true,
     infinite: true,
@@ -23,7 +24,16 @@ function Home() {
     slidesToShow: 3,
     slidesToScroll: 3
   };
+  
+  async function  componentDidMount() {
+    const res = await axios.get('http://localhost:3001/api/board');
+    setBoard(res.data)
+  }
 
+   useEffect(() => {
+     componentDidMount();
+   }, []);
+  
   const success = async (e) => {
     if (e.coords.latitude && e.coords.longitude) {
       let  json = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${e.coords.latitude}&lon=${e.coords.longitude}&appid=${api}&units=metric`)).json();
@@ -92,7 +102,7 @@ function Home() {
                 </div>
               </Slider>
             </div>
-            <MainWeatherCmmty />
+            <MainWeatherCmmty boards={ board} />
             <Footer />
           </div>
             }

@@ -34,7 +34,7 @@
     font-family: 'Noto Sans KR', sans-serif;
     width: 80%;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 130px;
 
     h1 {
         text-align: left;
@@ -90,7 +90,6 @@
         }
 
         tr {
-
             border-bottom: 1px solid #e5f6fc;
 
             &:hover {
@@ -102,38 +101,17 @@
             padding: 15px 0;
 
             span {
-                // border: 1px solid #000;
                 display: inline-block;
-                // width: 80px;
                 border-radius: 20px;
                 background-color: #74b9ff;
-                padding: 5px 23px;
+                padding: 5px 20px;
                 color: #fff;
             }
 
             a {
                 position: relative;
                 display: inline-block;
-                width: 700px;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-
-                &.new::after {
-                    content: 'N';
-                    position: absolute;
-                    top: 50%;
-                    right: -25px;
-                    transform: translateY(-50%);
-                    background-color: #74b9ff;
-                    width: 18px;
-                    height: 18px;
-                    color: #fff;
-                    font-size: 11px;
-                    border-radius: 3px;
-                }
             }
         }
-
     }
 }

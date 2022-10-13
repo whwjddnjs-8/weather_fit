@@ -1,14 +1,13 @@
 import styles from "./MainWeather.module.scss";
-import cloud2 from "../../images/cloud2.png";
 import Header from '../../components/header/Header';
 
 function MainWeather({icon, today, weather}) {
     return (
         <div className={styles.main_weather}>
-              <Header />
-              <div className={styles.logo_area}>
+            <Header />
+             {/*  <div className={styles.logo_area}>
                 <img src={cloud2} className={styles.cloud} />
-              </div>
+              </div> */}
              
             <div className={styles.weather_area}>
                 <i className={`wi wi-day-${icon}`}></i>
