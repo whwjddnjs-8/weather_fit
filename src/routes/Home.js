@@ -9,6 +9,8 @@ import cloth2 from "../images/trench.jpg"
 import cloth3 from "../images/rider.png"
 import Footer from '../components/footer/Footer';
 import axios from 'axios';
+import Introduction from '../components/introduction/Introduction';
+
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -29,10 +31,6 @@ function Home() {
     const res = await axios.get('http://localhost:3001/api/board');
     setBoard(res.data)
   }
-
-   useEffect(() => {
-     componentDidMount();
-   }, []);
   
   const success = async (e) => {
     if (e.coords.latitude && e.coords.longitude) {
@@ -66,6 +64,7 @@ function Home() {
   }
   
   useEffect(() => {
+     componentDidMount();
     getLocation();
   }, []);
 
@@ -76,29 +75,36 @@ function Home() {
                   <img src={loadingImg} />
           </div> :
           <div>
-            <MainWeather  er icon={icon} today={today} weather={weather} />
+            <MainWeather er icon={icon} today={today} weather={weather} />
+            <Introduction />
             <div className={styles.recommend_style}>
               <h1>오늘 뭐입지?
                 <span>자세히 보기 &gt;</span> 
               </h1>
                <Slider {...settings}>
-                <div>
+                <div className={styles.img_container}>
                   <img src={cloth} />
+                  <button>니트 보러가기</button>
                 </div>
-                <div>
+                <div className={styles.img_container}>
                   <img src={cloth2} />
+                  <button>트렌치코트 보러가기</button>
                 </div>
-                <div>
+                <div className={styles.img_container} >
                   <img src={cloth3} />
+                  <button>라이더자켓 보러가기</button>
                 </div>
-                <div>
-                   <img src={cloth} />
+                <div className={styles.img_container}>
+                  <img src={cloth} />
+                  <button>니트 보러가기</button>
                 </div>
-                <div>
-                   <img src={cloth} />
+                <div className={styles.img_container}>
+                  <img src={cloth} />
+                  <button>니트 보러가기</button>
                 </div>
-                <div>
-                   <img src={cloth} />
+                <div className={styles.img_container}>
+                  <img src={cloth} />
+                  <button>니트 보러가기</button>
                 </div>
               </Slider>
             </div>
