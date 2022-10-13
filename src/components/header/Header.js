@@ -5,6 +5,11 @@ function Header() {
         <header>
             <div className={styles.header_wrapper}>
                 <img src={logo} />
+                <ul>
+                    <li>STORY</li>
+                    <li>COMMUNITY</li>
+                    <li>WEATHER FIT</li>
+                </ul>
                 <i className="xi-map-o"></i>
             </div>
         </header>

@@ -31,7 +31,6 @@
 
 /* Home.js Container Common */
 @mixin container {
-    font-family: 'Noto Sans KR', sans-serif;
     width: 80%;
     margin: auto;
     margin-top: 130px;
@@ -100,7 +99,7 @@
     @include container();
 
     table {
-        background-color: rgba(255, 255, 255, 0.582);
+        background-color: #fff;
         border-radius: 5px;
         width: 100%;
         font-size: 18px;

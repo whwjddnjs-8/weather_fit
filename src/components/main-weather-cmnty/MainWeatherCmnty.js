@@ -12,32 +12,34 @@ function MainWeatherCmmty({boards}) {
                   <col width={'17%'}></col>
                   <col width={'auto'} ></col>
                   <col width={'17%'}></col>
-                  {/* <col width={'17%'}></col> */}
                 </colgroup>
                 <thead>
                     <tr>
-                      <th></th>
+                      <th>위치</th>
                       <th>글 제목</th>
                       <th>작성자</th>
-                      {/* <th></th> */}
                     </tr>
                 </thead>
-                <tbody>
+                {boards.length == 0 ?
+                  <tbody>
+                    <tr>
+                      <td colSpan={3}>오늘 등록된 게시글이 없습니다.</td>
+                    </tr>
+                  </tbody>: 
+                  <tbody>
                     {boards.map((board, index) => 
                         <tr key={index}>
-                        <td>
-                            <span className={styles.location}>{board.location}</span>
-                        </td>
-                        <td>
-                          <a href="#none" className={styles.new}>{board.ttl}</a>
-                        </td>
-                        <td>{board.reg_ps_id}</td>
-                       {/*  <td>
-                          <button>보러가기</button>
-                        </td> */}
+                          <td>
+                              <span className={styles.location}>{board.location}</span>
+                          </td>
+                          <td>
+                            <a href="#none" className={styles.new}>{board.ttl}</a>
+                          </td>
+                          <td>{board.reg_ps_id}</td>
                         </tr>
                       )}
-                  </tbody>
+                  </tbody>}
+                
                 </table>
             </div>
     )
