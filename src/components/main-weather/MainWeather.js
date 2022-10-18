@@ -1,10 +1,8 @@
 import styles from "./MainWeather.module.scss";
-import Header from '../../components/header/Header';
 
 function MainWeather({icon, today, weather}) {
     return (
         <div className={styles.main_weather}>
-          <Header />
             <div className={styles.weather_area}>
                 <i className={`wi wi-day-${icon}`}></i>
                 <div className={styles.weather_desc}>

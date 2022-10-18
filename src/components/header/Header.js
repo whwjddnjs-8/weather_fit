@@ -1,14 +1,20 @@
 import logo from "../../images/logo2.png"
 import styles from "./Header.module.scss"
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 function Header() {
     return (
         <header>
             <div className={styles.header_wrapper}>
-                <img src={logo} />
+                <Link to="/"><img src={logo} /></Link>
                 <ul>
-                    <li>STORY</li>
-                    <li>COMMUNITY</li>
+                    <Link to="/"><li>STORY</li></Link>
                     <li>WEATHER FIT</li>
+                    <Link to="/community"><li>COMMUNITY</li></Link>
                 </ul>
                 <i className="xi-map-o"></i>
             </div>

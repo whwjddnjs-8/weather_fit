@@ -3,10 +3,6 @@ import styles from "./Home.module.scss"
 import loadingImg from "../images/cloud.png"
 import MainWeather from '../components/main-weather/MainWeather';
 import MainWeatherCmmty from '../components/main-weather-cmnty/MainWeatherCmnty';
-import Slider from "react-slick";
-import cloth from "../images/neat.png"
-import cloth2 from "../images/trench.jpg"
-import cloth3 from "../images/rider.png"
 import Footer from '../components/footer/Footer';
 import axios from 'axios';
 import Introduction from '../components/introduction/Introduction';
@@ -19,16 +15,9 @@ function Home() {
   const [icon, setIcon] = useState('wi-day-sunny');
   const [today, setToday] = useState('');
   const [board, setBoard] = useState('');
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  };
-  
+
   async function  componentDidMount() {
-    const res = await axios.get('http://localhost:3001/api/board');
+    const res = await axios.get('http://localhost:3001/api/board/homeList');
     setBoard(res.data)
   }
   
@@ -81,35 +70,38 @@ function Home() {
               <h1>오늘 뭐입지?
                 <span>자세히 보기 &gt;</span> 
               </h1>
-               <Slider {...settings}>
+              <div className={styles.style_list}>
                 <div className={styles.img_container}>
-                  <img src={cloth} />
-                  <button>니트 보러가기</button>
+                  <img src={require("../images/cloth.jpg")} />
                 </div>
                 <div className={styles.img_container}>
-                  <img src={cloth2} />
-                  <button>트렌치코트 보러가기</button>
+                 <img src={require("../images/cloth2.jpg")} />
                 </div>
                 <div className={styles.img_container} >
-                  <img src={cloth3} />
-                  <button>라이더자켓 보러가기</button>
+                 <img src={require("../images/cloth3.jpg")} />
                 </div>
                 <div className={styles.img_container}>
-                  <img src={cloth} />
-                  <button>니트 보러가기</button>
+                 <img src={require("../images/cloth4.jpg")} />
+                </div>
+                <div className={styles.img_container}>  
+                 <img src={require("../images/cloth5.jpg")} />
                 </div>
                 <div className={styles.img_container}>
-                  <img src={cloth} />
-                  <button>니트 보러가기</button>
+                 <img src={require("../images/cloth6.jpg")} />
                 </div>
                 <div className={styles.img_container}>
-                  <img src={cloth} />
-                  <button>니트 보러가기</button>
+                  <img src={require("../images/cloth7.jpg")} />
                 </div>
-              </Slider>
+                <div className={styles.img_container} >
+                  <img src={require("../images/cloth8.jpg")} />
+                </div>
+              </div>
+            </div>
+            <div className={styles.banner_area}>
+              {/* <img src={require("../images/event_banner.jpg")} />
+              <img src={require("../images/event_banner.jpg")} /> */}
             </div>
             <MainWeatherCmmty boards={ board} />
-            <Footer />
           </div>
             }
         </div>  

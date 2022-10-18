@@ -24,10 +24,19 @@ connection.connect();
 const cors = require('cors');
 app.use(cors());
 
-app.get('/api/board', (req,res) => {
+app.get('/api/board/homeList', (req,res) => {
     connection.query(
       "SELECT * from weather_board WHERE reg_dtm > CURRENT_DATE() ORDER BY reg_dtm desc LIMIT 5;",
       (err, rows, fields)=>{
+        res.send(rows);
+      }
+    );
+});
+
+app.get('/api/board/list', (req,res) => {
+    connection.query(
+      "SELECT * from weather_board ORDER BY reg_dtm desc;",
+      (err, rows, fields) => {
         res.send(rows);
       }
     );

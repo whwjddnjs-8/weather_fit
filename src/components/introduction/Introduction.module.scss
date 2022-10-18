@@ -1,12 +1,13 @@
 .introduction {
     background-color: #fff;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 100px 100px;
     gap: 30px;
 
     .intro {
-        flex: 1;
         display: flex;
+        flex: 1;
         gap: 8px;
 
         img {
@@ -30,5 +31,17 @@
 
             }
         }
+    }
+}
+
+@media (max-width: 1400px) {
+    .introduction {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    .introduction {
+        grid-template-columns: 1fr;
     }
 }

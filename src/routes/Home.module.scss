@@ -1,3 +1,5 @@
+$main-color : #ecf8fc;
+
 /* Loading SCSS */
 .loading {
     display: flex;
@@ -57,46 +59,45 @@
 .recommend_style {
     @include container();
 
-    .img_container {
-        background-color: #fff;
-        height: 580px;
-        transition: 0.35s;
+    .style_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 25px;
 
-        &:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-15px);
-        }
+        .img_container {
+            transition: 0.35s;
 
-        img {
-            width: 100%;
-            height: 500px;
-            padding: 20px;
-        }
+            &:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                transform: translateY(-15px);
+            }
 
-        >button {
-            border: 1px solid #000;
-            outline: none;
-            border: none;
-            display: block;
-            width: 75%;
-            margin: auto;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 17px;
-            background-color: #8fc7ff;
-            color: #fff;
-            font-weight: bold;
+            img {
+                width: 100%;
+                max-height: 500px;
+                // padding: 20px 0;
+            }
         }
     }
+}
 
+.banner_area {
+    @include container();
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+
+    img {
+        width: 600px;
+        border-radius: 40px;
+    }
 }
 
 
 /* 오늘 날씨 어때요? */
 .todays_weather_cmnty {
     @include container();
+    margin-bottom: 120px;
 
     table {
         background-color: #fff;
@@ -112,15 +113,15 @@
         }
 
         th {
-            border-bottom: 1px solid #e5f6fc;
+            border-bottom: 1px solid $main-color;
             padding: 15px;
         }
 
         tr {
-            border-bottom: 1px solid #e5f6fc;
+            border-bottom: 1px solid $main-color;
 
             &:hover {
-                background-color: #e5f6fc;
+                background-color: $main-color;
             }
         }
 

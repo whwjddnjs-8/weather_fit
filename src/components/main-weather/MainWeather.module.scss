@@ -1,6 +1,6 @@
 .main_weather {
     margin-top: 60px;
-    background: url(../../images/yard5.png);
+    background: url(../../images/yard.png);
     background-repeat: repeat-x;
     background-position: cover;
     background-size: cover;
@@ -19,32 +19,6 @@
         100% {
             background-position: 0% 50%;
         }
-    }
-
-    .logo_area {
-        background-color: #e5f6fc;
-        height: 250px;
-        width: 100%;
-        display: grid;
-        place-content: center;
-        position: relative;
-
-        /* .cloud {
-            position: absolute;
-            width: 700px;
-            left: -100px;
-            bottom: -40px;
-            animation: cloudLoading 5s linear infinite;
-        } */
-
-        /* .cloud2 {
-            position: absolute;
-            width: 600px;
-            right: -100px;
-            top: 290px;
-            animation: cloudLoading 5s linear infinite;
-            animation-delay: 0.3s;
-        } */
     }
 
     .weather_area {
@@ -110,18 +84,6 @@
     }
 }
 
-
-@keyframes cloudLoading {
-    0% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(40px);
-    }
-}
 
 @keyframes arrow {
 

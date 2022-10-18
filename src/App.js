@@ -6,14 +6,19 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./routes/Home";
+import CommunityList from './routes/community/CommuntiyList';
+import Headers from "./components/header/Header"
+import Footer from "./components/footer/Footer"
 
 function App() {
-  
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Headers />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/community" element={<CommunityList />} />
+        </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
